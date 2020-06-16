@@ -1,4 +1,4 @@
-import { createComponent, createState } from "solid-js";
+import { createState } from "solid-js";
 import { customElement } from "solid-element";
 import style from "./OksidiSharer.scss";
 const copyToClipboard = (str: string, element: HTMLElement) => {
