@@ -228,17 +228,4 @@ const OksidiSharer = (props: typeof DEFAULT_PROPS) => {
     );
 };
 
-// const HelloMessage = (props: { name: string; shareUrl: string }) => {
-//     return (
-//         <>
-//             <style>{style}</style>
-//             <div class="foo">...</div>
-//         </>
-//     );
-// };
 customElement("oksidi-sharer", DEFAULT_PROPS, OksidiSharer);
-
-// render(
-//     () => <HelloMessage shareUrl="f" name="Taylor!" />,
-//     document.getElementById("hello-example")!
-// );
