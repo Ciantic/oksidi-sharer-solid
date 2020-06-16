@@ -1,0 +1,31 @@
+{
+    "name": "oksidi-sharer-solidjs",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "concurrently \"rollup --watch --config rollup.config.js\" \"live-server ./dist\""
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/cli": "^7.10.1",
+        "@babel/core": "^7.10.2",
+        "@babel/plugin-transform-runtime": "^7.10.1",
+        "@babel/preset-env": "^7.10.2",
+        "@babel/preset-typescript": "^7.10.1",
+        "@rollup/plugin-babel": "^5.0.3",
+        "@rollup/plugin-commonjs": "^13.0.0",
+        "@rollup/plugin-node-resolve": "^8.0.1",
+        "babel-preset-solid": "^0.18.7",
+        "concurrently": "^5.2.0",
+        "live-server": "^1.2.1",
+        "rollup": "^2.16.1",
+        "rollup-plugin-postcss": "^3.1.2",
+        "rollup-plugin-terser": "^6.1.0",
+        "sass": "^1.26.8",
+        "solid-element": "^0.18.7",
+        "solid-js": "^0.18.7",
+        "typescript": "^3.9.5"
+    }
+}

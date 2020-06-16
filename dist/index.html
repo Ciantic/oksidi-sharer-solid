@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>&lt;oksidi-sharer /> web component</title>
+
+        <style>
+            body {
+                font-family: Georgia;
+                font-size: 150%;
+            }
+        </style>
+        <script src="./OksidiSharer.js"></script>
+    </head>
+    <body>
+        <h1>
+            <code>&lt;oksidi-sharer /></code>
+            web component
+        </h1>
+        <p>This is mostly just my useful experiment with Web Components and Solid.</p>
+
+        <h2>Example with defaults</h2>
+        <oksidi-sharer></oksidi-sharer>
+
+        <h2>Example with settings</h2>
+        <oksidi-sharer
+            locale="fi"
+            use-linkedin="1"
+            share-title="Example.com is great!"
+            share-url="https://example.com"
+            style="
+                --color: red;
+                --hover-color: yellow;
+                --tooltip-font: 12px/1.5 'sans-serif';
+                --tooltip-text-transform: uppercase;
+                --tooltip-background-color: green;
+                --tooltip-color: white;
+            "
+            css="
+          /* Inject aribtrary CSS to the Shadow DOM */
+          li:last-child > a { transform: rotate(50deg) scale(1.5); }
+      "
+        ></oksidi-sharer>
+
+        <h2>Example within text</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis tincidunt erat in purus
+            ullamcorper ultricies. Duis lacinia aliquet dolor.
+            <oksidi-sharer
+                text-share="Share inline"
+                style="display: inline-block; --opener-icon-size: 1em; --icon-size: 1em;"
+            ></oksidi-sharer>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis tincidunt erat in purus
+            ullamcorper ultricies. Duis lacinia aliquet dolor. Maecenas velit enim, eleifend a,
+            tempor eu, mattis in.
+        </p>
+
+        <h2>Credits</h2>
+        <p>
+            Author: Jari Otto Oskari Pennanen <br />
+            Repository:
+            <a href="https://github.com/Ciantic/oksidi-sharer-solid"
+                >https://github.com/Ciantic/oksidi-sharer-solid</a
+            ><br />
+            License: MIT, see LICENSE
+        </p>
+        <p>Icons from <a href="https://iconmonstr.com/">iconmonstr.com</a></p>
+    </body>
+</html>

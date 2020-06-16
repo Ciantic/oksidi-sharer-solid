@@ -1,0 +1,108 @@
+$fg: var(--color, #000000);
+$fg-hover: var(--hover-color, gray);
+$anim-speed: 0.25s;
+$open-anim-speed: 0.2s;
+$size: var(--opener-icon-size, 1.5em);
+$size2: var(--icon-size, 1.2em);
+.sharer {
+    color: $fg;
+    line-height: $size;
+    position: relative;
+}
+.opener {
+    display: inline-block;
+    text-decoration: none;
+    color: $fg;
+    transition: color $anim-speed;
+    > svg {
+        transition: fill $anim-speed;
+        width: $size;
+        height: $size;
+        fill: $fg;
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        top: -0.08em;
+    }
+    @media (hover: hover) {
+        &:hover {
+            color: $fg-hover;
+            svg {
+                fill: $fg-hover;
+            }
+        }
+    }
+}
+
+.choices {
+    list-style: none;
+    padding: 0 0 0 0.4em;
+    margin: 0;
+    display: inline-block;
+    position: relative;
+    top: -0.1em;
+    > li {
+        display: inline-block;
+        transition: transform $open-anim-speed, opacity $open-anim-speed;
+        opacity: 0;
+    }
+    @for $i from 1 to 12 {
+        > li:nth-child(#{$i}) {
+            transform: translateX(-1em * $i);
+        }
+    }
+
+    a {
+        display: block;
+        padding: 0 0.25em;
+
+        @media (hover: hover) {
+            &:hover {
+                svg {
+                    fill: $fg-hover;
+                }
+            }
+        }
+    }
+    svg {
+        width: $size2;
+        height: $size2;
+        display: inline-block;
+        vertical-align: middle;
+        transition: fill $anim-speed;
+        fill: $fg;
+    }
+    &.shown {
+        > li {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+}
+.copy-tip {
+    line-height: 1.2;
+    padding: 0.4em;
+    position: absolute;
+    font: var(--tooltip-font, 80% sans-serif);
+    text-transform: var(--tooltip-text-transform, uppercase);
+    background: var(--tooltip-background-color, $fg);
+    color: var(--tooltip-color, #ffffff);
+    text-align: center;
+    left: -3.5em;
+    right: -3.5em;
+    bottom: 100%;
+    display: block;
+    &:before {
+        content: "";
+        position: absolute;
+        display: block;
+        left: 50%;
+        width: 0;
+        height: 0;
+        top: 100%;
+        transform: translateX(-50%);
+        border-width: 0.5em;
+        border-style: solid;
+        border-color: var(--tooltip-background-color, $fg) transparent transparent transparent;
+    }
+}
