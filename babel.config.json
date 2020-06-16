@@ -1,11 +1,14 @@
 {
-  "presets": ["solid", "@babel/preset-typescript", "@babel/preset-env"],
-  "plugins": [
-    ["@babel/plugin-transform-runtime",  {
-      "corejs": false,
-      "helpers": false,
-      "regenerator": true,
-      "useESModules": true
-    }
-    ]]
+    "presets": ["solid", "@babel/preset-typescript", "@babel/preset-env"],
+    "plugins": [
+        [
+            "@babel/plugin-transform-runtime",
+            {
+                "corejs": false,
+                "helpers": false,
+                "regenerator": true,
+                "useESModules": true
+            }
+        ]
+    ]
 }
